@@ -1,4 +1,43 @@
 import Link from "next/link";
+import ProjectCard from "@/app/components/ProjectCard";
+
+export interface Project {
+  title: string;
+  description: string;
+  link: string;
+  imageUrl: string;
+}
+
+export const Projects: Project[] = [
+  {
+    title: "TaskMate",
+    description:
+      "A sleek task management application built to streamline team collaboration and enhance productivity, leveraging Kanban boards and real-time notifications.",
+    link: "/projects/taskmate",
+    imageUrl: "/images/taskmate.png",
+  },
+  {
+    title: "CodeSnip",
+    description:
+      "An intuitive code snippet organizer where developers can save, search, and share snippets with syntax highlighting and cloud synchronization.",
+    link: "/projects/codesnip",
+    imageUrl: "/images/codesnip.png",
+  },
+  {
+    title: "ShopSphere",
+    description:
+      "A modern e-commerce platform designed with a seamless user experience, including features like cart management, product reviews, and secure payment integration.",
+    link: "/projects/shopsphere",
+    imageUrl: "/images/shopsphere.png",
+  },
+  {
+    title: "DevTrackr",
+    description:
+      "A bug tracking system tailored for development teams, with customizable workflows, sprint tracking, and detailed reporting dashboards.",
+    link: "/projects/devtrackr",
+    imageUrl: "/images/devtrackr.png",
+  },
+];
 
 export default function Home() {
   return (
@@ -12,43 +51,12 @@ export default function Home() {
           A showcase of my software projects—built with precision, simplicity,
           and innovation.
         </p>
-        <Link href="/projects">
-          <button className="mt-6 px-6 py-3 bg-blue-500 text-white font-semibold rounded-lg hover:bg-blue-600 transition">
-            View Projects
-          </button>
-        </Link>
       </section>
-
-      {/* Featured Projects */}
       <section className="w-full max-w-3xl">
         <h2 className="text-3xl font-bold mb-6">Featured Projects</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {[
-            { id: "billforge", name: "BillForge", desc: "SaaS Billing System" },
-            {
-              id: "tradesphere",
-              name: "TradeSphere",
-              desc: "Real-Time Marketplace",
-            },
-            {
-              id: "pluginpal",
-              name: "PluginPal",
-              desc: "ChatGPT Plugin Store",
-            },
-            {
-              id: "knightmind",
-              name: "KnightMind",
-              desc: "AI-Powered Chess Engine",
-            },
-          ].map((project) => (
-            <Link
-              key={project.id}
-              href={`/projects/${project.id}`}
-              className="p-4 bg-gray-800 rounded-lg hover:bg-gray-700 transition"
-            >
-              <h3 className="text-xl font-semibold">{project.name}</h3>
-              <p className="text-gray-400">{project.desc}</p>
-            </Link>
+          {Projects.map((project) => (
+            <ProjectCard key={project.title} project={project} />
           ))}
         </div>
       </section>
