@@ -1,41 +1,71 @@
-import Link from "next/link";
 import ProjectCard from "@/app/components/ProjectCard";
 
 export interface Project {
   title: string;
   description: string;
   link: string;
+  repoLink: string;
   imageUrl: string;
+  stack: string[];
+  keyFeatures: string[];
 }
 
-export const Projects: Project[] = [
+const Projects: Project[] = [
   {
-    title: "TaskMate",
+    title: "BlitzChess",
     description:
-      "A sleek task management application built to streamline team collaboration and enhance productivity, leveraging Kanban boards and real-time notifications.",
-    link: "/projects/taskmate",
-    imageUrl: "/images/taskmate.png",
+      "A real-time online multiplayer chess platform featuring ELO rating, seamless matchmaking, and live game analytics for enthusiasts and professionals.",
+    link: "/projects/blitzchess",
+    repoLink: "/repo/blitzchess",
+    imageUrl: "/BlitzChess-retro.webp",
+    stack: ["React", "Node.js", "WebSocket", "PostgreSQL"],
+    keyFeatures: [
+      "Real-time multiplayer system",
+      "ELO rating and leaderboards",
+      "Live analytics dashboard",
+    ],
   },
   {
-    title: "CodeSnip",
+    title: "SnapAI",
     description:
-      "An intuitive code snippet organizer where developers can save, search, and share snippets with syntax highlighting and cloud synchronization.",
-    link: "/projects/codesnip",
-    imageUrl: "/images/codesnip.png",
+      "An AI-driven photo editing application that automates processes like retouching, background removal, and filter application with a simple interface.",
+    link: "/projects/snapai",
+    repoLink: "/repo/snapai",
+    imageUrl: "/SnapAI-retro.webp",
+    stack: ["React", "TensorFlow.js", "Node.js"],
+    keyFeatures: [
+      "AI-driven photo enhancements",
+      "Background removal",
+      "Customizable filters and presets",
+    ],
   },
   {
-    title: "ShopSphere",
+    title: "AdminEase",
     description:
-      "A modern e-commerce platform designed with a seamless user experience, including features like cart management, product reviews, and secure payment integration.",
-    link: "/projects/shopsphere",
-    imageUrl: "/images/shopsphere.png",
+      "A comprehensive admin panel solution with customizable dashboards, access control, and analytics for managing business operations.",
+    link: "/projects/adminease",
+    repoLink: "/repo/adminease",
+    imageUrl: "/AdminEase-retro.webp",
+    stack: ["React", "TypeScript", "Chart.js", "Firebase"],
+    keyFeatures: [
+      "Customizable dashboards",
+      "Role-based access control",
+      "Interactive analytics and charts",
+    ],
   },
   {
-    title: "DevTrackr",
+    title: "JumpKnight",
     description:
-      "A bug tracking system tailored for development teams, with customizable workflows, sprint tracking, and detailed reporting dashboards.",
-    link: "/projects/devtrackr",
-    imageUrl: "/images/devtrackr.png",
+      "A 2D platformer game focused on challenging levels, smooth controls, and engaging mechanics, designed for casual and competitive play.",
+    link: "/projects/jumpknight",
+    repoLink: "/repo/jumpknight",
+    imageUrl: "/JumpKnight-retro.webp",
+    stack: ["Phaser.js", "TypeScript", "Firebase"],
+    keyFeatures: [
+      "Smooth and intuitive controls",
+      "Challenging platformer gameplay",
+      "Cloud-based leaderboard scores",
+    ],
   },
 ];
 
